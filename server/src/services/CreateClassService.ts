@@ -20,7 +20,7 @@ interface IRequest {
 class CreateClassService {
   public async execute({ name, avatar, whatsapp, bio, subject, cost, schedule }: IRequest): Promise<void> {
     const trx = await db.transaction();
-    
+
     try {
       const user_id = await trx('users').insert({ name, avatar, whatsapp, bio });
 
